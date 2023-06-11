@@ -45,3 +45,12 @@ petContext.SaveChanges();
 petContext.Remove(cat);
 petContext.SaveChanges();
 ```
+
+**Querying**<br>
+```
+// Load all cats and related meals
+var cats = petContext.Cats.Include(c => c.Meals).ToList();
+
+// Load one dog and its related meals
+var dogs = petContext.Dogs.Single(d => d.Name == "Charlie").Include(d => d.Meals); 
+```

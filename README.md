@@ -27,6 +27,7 @@ public class ExampleContext : DbContext
 }
 ```
 **CRUD Operations**<br>
+The example below shows how to use `Add`, `Remove` and `SaveChanges`.
 ```
 using var petContext = new ExampleContext();
 
@@ -47,6 +48,7 @@ petContext.SaveChanges();
 ```
 
 **Querying**<br>
+The examples below show how to query data.
 ```
 // Load all cats and related meals
 var cats = petContext.Cats.Include(c => c.Meals).ToList();
